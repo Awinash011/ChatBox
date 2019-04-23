@@ -1,0 +1,58 @@
+<div class="row-chat">
+  <div class="col-md-6">
+    <%= image_tag "img_one.jpg" , :size => "400x300" %>
+  </div>
+  <div class="col-md-6">
+    <div class="col-md-12 text-center">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">User Count</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <h3><%= all_users.count %></h3>    
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Valid User Count</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <h3><%= valid_users.count %></h3>    
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 text-center">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Timer</h3>
+        </div>
+        <div class="panel-body">
+          <h3 id="timer">Chat will start in 2 minutes</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  setTimeout(function() {
+    $.ajax({
+      type: 'GET',
+      url: '/home/index_two'
+    });
+  }, 1000 * 60 * 2);
+  
+  var time=2*60,tmp=time;
+  setInterval(function(){
+    var c=tmp--,min=(c/60)>>0,sec=(c-min*60)+'';
+    document.getElementById('timer').innerHTML= "00" + ':' + min+':'+(sec.length>1?'':'0')+sec
+    tmp!=0||(tmp=time);
+  },1000);
+
+</script>

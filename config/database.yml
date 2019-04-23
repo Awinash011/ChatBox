@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: chat_box
+
+# production:
+#   <<: *default
+#   database: chat_box_prod

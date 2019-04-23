@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-static-top" style="background-color: blue;">
+      <a class="navbar-brand" href="/" style="color: aqua;"><b>ChatBox</b></a>
+      <%= link_to 'Reset', reset_all_path, class: 'btn btn-danger pull-right' %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
