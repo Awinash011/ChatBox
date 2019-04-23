@@ -1,2 +1,2 @@
 # ChatBox
-Live char feature
+Live chat feature
